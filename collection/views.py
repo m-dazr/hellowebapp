@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from collection.models import Post
 
 # Create your views here.
 def index(request):
    # this is your new view
-   number = 6
-   return render(request, 'index.html', {'number': number,})
+   posts = Post.objects.all()
+   return render(request, 'index.html', {'posts': posts,})

@@ -2,7 +2,13 @@
 {% block title %} Homepage - {{ block.super}}{% endblock %}
  
 {% block content %}
-	<h1>HomePage MFKR</h1>
-	<p>{% if number %}Number exists{% endif %}</p>
+	 
+	{% for post in posts %}
+	
+	<h1>{{ post.title }}</h1>
+	<p>{{ post.text }}</p>
+	<br><br>
+	
+	{% endfor %} 
 
 {% endblock %}
