@@ -11,8 +11,8 @@
 	
 	<h1>{{ post.title }}</h1>
 	<p>{{ post.text }}</p>
-	<br><br>
-	
 
+	<a href="{% url 'edit_post' slug=post.slug %}">Edit me!</a>
+	<br><br>
 
 {% endblock %}
