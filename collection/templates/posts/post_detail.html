@@ -12,7 +12,11 @@
 	<h1>{{ post.title }}</h1>
 	<p>{{ post.text }}</p>
 
-	<a href="{% url 'edit_post' slug=post.slug %}">Edit me!</a>
-	<br><br>
+{% if user == post.user %}
 
+	<p>
+	<a href="{% url 'edit_post' slug=post.slug %}">Edit me!</a>
+	</p>
+	<br><br>
+{% endif %}
 {% endblock %}

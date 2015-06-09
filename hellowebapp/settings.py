@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,4 +102,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
- 
+
+#email acct activation, no of days to activate before expires
+ACCOUNT_ACTIVATION_DAYS = 7 
+
+#Email 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'testing@example.com' 
+EMAIL_HOST_USER = '' 
+EMAIL_HOST_PASSWORD = '' 
+EMAIL_USE_TLS = False 
+EMAIL_PORT = 1025
+
+LOGIN_REDIRECT_URL = "home"

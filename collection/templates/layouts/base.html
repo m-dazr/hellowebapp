@@ -30,8 +30,26 @@
       <li><a href="{% url 'home' %}">HOME</a></li>
 
       <li><a href="{% url 'contact' %}">CONTACT</a></li>
+
+      <li><a href="{% url 'browse' %}">BROWSE</a></li>
       
       <li><a href="{% url 'about' %}">ABOUT US</a></li>
+
+
+      {% if user.is_authenticated %}
+      <li>
+          <a href="{% url 'auth_logout' %}"> LOGOUT </a>
+      </li>
+
+      {% else %}
+      <li>
+          <a href="{%url 'auth_login' %}"> LOGIN </a>
+      </li>
+
+      <li>
+          <a href="{%url 'registration_register' %}"> REGISTER </a>
+      </li>        
+      {% endif %}
        
 
     </ul>
